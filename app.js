@@ -1,16 +1,9 @@
-const http = require('http');
-
-//const hostname = '127.0.0.1';
-//const hostname = 'localhost';
-const hostname = 'ec2-34-203-246-102.compute-1.amazonaws.com';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola R&D, hola a todos todos todos todos todostodostodostodostodostodostodos');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`El servidor se está ejecutando en http://${hostname}:${port}/`);
-});
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => {
+  res.send('Hello a todos!')
+})
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
